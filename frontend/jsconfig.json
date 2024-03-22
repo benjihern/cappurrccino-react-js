@@ -1,0 +1,6 @@
+{
+    "complilerOptions": {
+        "moduleResolution": "node"
+    },
+    "include": ["src"]
+}

@@ -4,7 +4,7 @@ import classes from "./header.module.css";
 
 export default function Header() {
   const user = {
-    name: "John",
+    name: "CatGuy123",
   };
 
   const cart = {

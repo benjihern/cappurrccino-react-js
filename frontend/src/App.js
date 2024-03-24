@@ -1,21 +1,23 @@
+import React from "react";
+import { AuthProvider, useAuth } from "./pages/Login/contexts/authContext/";
+import { useRoutes, Navigate } from "react-router-dom";
 import Login from "./pages/Login/components/auth/login/login";
 import Register from "./pages/Login/components/auth/register/register";
-
 import Header from "./pages/Login/components/header/header";
 import Home from "./pages/Login/components/home/home";
-
-import { AuthProvider } from "./pages/Login/contexts/authContext/";
-import { useRoutes } from "react-router-dom";
+import MenuPage from "./pages/Menu/MenuPage";
 
 function App() {
+  const { currentUser } = useAuth();
+
   const routesArray = [
     {
       path: "*",
-      element: <Login />,
+      element: <Navigate to="/login" />,
     },
     {
       path: "/login",
-      element: <Login />,
+      element: currentUser ? <Navigate to="/menu" /> : <Login />,
     },
     {
       path: "/register",
@@ -25,8 +27,14 @@ function App() {
       path: "/home",
       element: <Home />,
     },
+    {
+      path: "/menu",
+      element: currentUser ? <MenuPage /> : <Navigate to="/login" />,
+    },
   ];
-  let routesElement = useRoutes(routesArray);
+
+  const routesElement = useRoutes(routesArray);
+
   return (
     <AuthProvider>
       <Header />

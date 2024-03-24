@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./thumbnails.module.css";
 import { Link } from "react-router-dom";
-import Price from "../Price/Price";
+import Price from "../Price/Price.js"
 
 export default function Thumbnails({ foods }) {
   return (

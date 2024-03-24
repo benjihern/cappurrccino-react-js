@@ -1,7 +1,7 @@
 import { type } from "@testing-library/user-event/dist/type";
 import { getAll } from "../../services/foodService";
 import React, { useReducer, useEffect } from "react";
-import Thumbnails from "../../components/Thumbnails/Thumbnails";
+import Thumbnails from "./components/Thumbnails/Thumbnails";
 
 const initialState = { foods: [] };
 

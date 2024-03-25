@@ -1,6 +1,6 @@
 import React from "react";
 import { AuthProvider, useAuth } from "./pages/Login/contexts/authContext/";
-import { useRoutes, Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Login from "./pages/Login/components/auth/login/login";
 import Register from "./pages/Login/components/auth/register/register";
 import Header from "./pages/Login/components/header/header";

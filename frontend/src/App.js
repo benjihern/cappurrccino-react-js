@@ -42,7 +42,8 @@ import MenuPage from "./pages/Menu/MenuPage";
 import Login from "./pages/Login/components/auth/login/login";
 import Register from "./pages/Login/components/auth/register/register";
 
-import Header from "./pages/Login/components/header/header";
+import HeaderLogin from "./pages/Login/components/header/header";
+import HeaderMenu from "./pages/Menu/components/Header/Header";
 
 import { AuthProvider } from "./pages/Login/contexts/authContext/";
 import { useRoutes } from "react-router-dom";
@@ -51,28 +52,28 @@ function App() {
   const routesArray = [
     {
       path: "*",
-      element: <Login />,
+      element: <><HeaderLogin /><Login /></>,
     },
     {
       path: "/login",
-      element: <Login />,
+      element: <><HeaderLogin /><Login /></>,
     },
     {
       path: "/register",
-      element: <Register />,
+      element: <><HeaderLogin /><Register /></>,
     },
     {
       path: "/menu",
-      element: <MenuPage />,
+      element: <><HeaderMenu /><MenuPage /></>,
     },
     {
       path: "/search/:searchTerm",
-      element: <MenuPage />,}
+      element: <><HeaderMenu /><MenuPage /></>,
+    }
   ];
   let routesElement = useRoutes(routesArray);
   return (
     <AuthProvider>
-      <Header />
       <div className="w-full h-screen flex flex-col">{routesElement}</div>
     </AuthProvider>
   );

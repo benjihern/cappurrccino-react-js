@@ -37,58 +37,62 @@
 
 // CODE FOR OPENING LOGIN SCREEN ON STARTUP
 
-// import Login from "./pages/Login/components/auth/login/login";
-// import Register from "./pages/Login/components/auth/register/register";
+import MenuPage from "./pages/Menu/MenuPage";
 
-// import Header from "./pages/Login/components/header/header";
-// import Home from "./pages/Login/components/home/home";
+import Login from "./pages/Login/components/auth/login/login";
+import Register from "./pages/Login/components/auth/register/register";
 
-// import { AuthProvider } from "./pages/Login/contexts/authContext/";
-// import { useRoutes } from "react-router-dom";
+import Header from "./pages/Login/components/header/header";
 
-// function App() {
-//   const routesArray = [
-//     {
-//       path: "*",
-//       element: <Login />,
-//     },
-//     {
-//       path: "/login",
-//       element: <Login />,
-//     },
-//     {
-//       path: "/register",
-//       element: <Register />,
-//     },
-//     {
-//       path: "/home",
-//       element: <Home />,
-//     },
-//   ];
-//   let routesElement = useRoutes(routesArray);
-//   return (
-//     <AuthProvider>
-//       <Header />
-//       <div className="w-full h-screen flex flex-col">{routesElement}</div>
-//     </AuthProvider>
-//   );
-// }
-// export default App;
+import { AuthProvider } from "./pages/Login/contexts/authContext/";
+import { useRoutes } from "react-router-dom";
+
+function App() {
+  const routesArray = [
+    {
+      path: "*",
+      element: <Login />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+    {
+      path: "/register",
+      element: <Register />,
+    },
+    {
+      path: "/menu",
+      element: <MenuPage />,
+    },
+    {
+      path: "/search/:searchTerm",
+      element: <MenuPage />,}
+  ];
+  let routesElement = useRoutes(routesArray);
+  return (
+    <AuthProvider>
+      <Header />
+      <div className="w-full h-screen flex flex-col">{routesElement}</div>
+    </AuthProvider>
+  );
+}
+export default App;
 
 
 
 // CODE FOR OPENING UP MENU ON STARTUP
 
-import AppRoutes from "./AppRoutes";
-import Header from "./pages/Menu/components/Header/Header";
+// import AppRoutes from "./AppRoutes";
+// import Header from "./pages/Menu/components/Header/Header";
 
-function App() {
-  return (
-    <>
-      <Header />
-      <AppRoutes />
-    </>
-  );
-}
+// function App() {
+//   return (
+//     <>
+//       <Header />
+//       <AppRoutes />
+//     </>
+//   );
+// }
 
-export default App;
+// export default App;

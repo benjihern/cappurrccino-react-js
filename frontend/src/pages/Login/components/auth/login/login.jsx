@@ -32,7 +32,7 @@ const Login = () => {
 
     return (
         <div className="flex justify-center items-center h-screen bg-gradient-to-br from-blue-400 to-purple-500">
-            {userLoggedIn && <Navigate to={'/home'} replace={true} />}
+            {userLoggedIn && <Navigate to={'/menu'} replace={true} />}
 
             <main className="w-full max-w-md p-8 bg-white rounded-xl shadow-lg">
                 <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Welcome Back</h1>

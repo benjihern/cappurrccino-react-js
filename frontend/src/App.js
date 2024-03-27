@@ -37,63 +37,66 @@
 
 // CODE FOR OPENING LOGIN SCREEN ON STARTUP
 
-import MenuPage from "./pages/Menu/MenuPage";
+// import MenuPage from "./pages/Menu/MenuPage";
 
-import Login from "./pages/Login/components/auth/login/login";
-import Register from "./pages/Login/components/auth/register/register";
+// import Login from "./pages/Login/components/auth/login/login";
+// import Register from "./pages/Login/components/auth/register/register";
 
-import HeaderLogin from "./pages/Login/components/header/header";
-import HeaderMenu from "./pages/Menu/components/Header/Header";
+// import HeaderLogin from "./pages/Login/components/header/header";
+// import HeaderMenu from "./pages/Menu/components/Header/Header";
 
-import { AuthProvider } from "./pages/Login/contexts/authContext/";
-import { useRoutes } from "react-router-dom";
+// import { AuthProvider } from "./pages/Login/contexts/authContext/";
+// import { useRoutes } from "react-router-dom";
 
-function App() {
-  const routesArray = [
-    {
-      path: "*",
-      element: <><HeaderLogin /><Login /></>,
-    },
-    {
-      path: "/login",
-      element: <><HeaderLogin /><Login /></>,
-    },
-    {
-      path: "/register",
-      element: <><HeaderLogin /><Register /></>,
-    },
-    {
-      path: "/menu",
-      element: <><HeaderMenu /><MenuPage /></>,
-    },
-    {
-      path: "/search/:searchTerm",
-      element: <><HeaderMenu /><MenuPage /></>,
-    }
-  ];
-  let routesElement = useRoutes(routesArray);
-  return (
-    <AuthProvider>
-      <div className="w-full h-screen flex flex-col">{routesElement}</div>
-    </AuthProvider>
-  );
-}
-export default App;
+// function App() {
+//   const routesArray = [
+//     {
+//       path: "*",
+//       element: <><HeaderLogin /><Login /></>,
+//     },
+//     {
+//       path: "/login",
+//       element: <><HeaderLogin /><Login /></>,
+//     },
+//     {
+//       path: "/register",
+//       element: <><HeaderLogin /><Register /></>,
+//     },
+//     {
+//       path: "/menu",
+//       element: <><HeaderMenu /><HeaderLogin /><MenuPage /></>,
+//     },
+//     {
+//       path: "/search/:searchTerm",
+//       element: <><HeaderMenu /><HeaderLogin /><MenuPage /></>,
+//     },
+//     {
+//       path: "/tag/:tag",
+//       element: <><HeaderMenu /><MenuPage /></>,
+//     },
+//   ];
+//   let routesElement = useRoutes(routesArray);
+//   return (
+//     <AuthProvider>
+//       <div className="w-full h-screen flex flex-col">{routesElement}</div>
+//     </AuthProvider>
+//   );
+// }
+// export default App;
 
 
 
 // CODE FOR OPENING UP MENU ON STARTUP
 
-// import AppRoutes from "./AppRoutes";
+import AppRoutes from "./AppRoutes";
 // import Header from "./pages/Menu/components/Header/Header";
 
-// function App() {
-//   return (
-//     <>
-//       <Header />
-//       <AppRoutes />
-//     </>
-//   );
-// }
+function App() {
+  return (
+    <>
+      <AppRoutes />
+    </>
+  );
+}
 
-// export default App;
+export default App;

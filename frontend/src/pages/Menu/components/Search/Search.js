@@ -8,7 +8,7 @@ export default function Search() {
   const { searchTerm } = useParams();
 
   const search = async () => {
-    term? navigate('/search/' + term) : navigate('/');
+    term? navigate('/search/' + term) : navigate('/menu');
   };
 
   return (

@@ -7,8 +7,9 @@ import Login from "./pages/Login/components/auth/login/login";
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="login" element={<Login />} />
+      {/* <Route path="login" element={<Login />} /> */}
       <Route path="/*" element={<MenuPage />} />
+      <Route path="/search/:searchTerm" element={<MenuPage />} />
     </Routes>
   );
 }

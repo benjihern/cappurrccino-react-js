@@ -33,9 +33,7 @@
 // }
 // export default App;
 
-
-
-// CODE FOR OPENING LOGIN SCREEN ON STARTUP
+// CURRENT IMPLEMENTATION OF SWITCHING FROM LOGIN SCREEN TO MENU
 
 import MenuPage from "./pages/Menu/MenuPage";
 
@@ -53,7 +51,7 @@ function App() {
   const routesArray = [
     {
       path: "*",
-      element: currentUser ? <><HeaderLogin /><Login /></> : <><HeaderMenu /><HeaderLogin /><MenuPage /></>,
+      element: currentUser ? <><HeaderLogin /><Login /></> : <><HeaderMenu /><MenuPage /></>,
     },
     {
       path: "/login",
@@ -65,11 +63,11 @@ function App() {
     },
     {
       path: "/menu",
-      element: <><HeaderMenu /><HeaderLogin /><MenuPage /></>,
+      element: <><HeaderMenu /><MenuPage /></>,
     },
     {
       path: "/search/:searchTerm",
-      element: <><HeaderMenu /><HeaderLogin /><MenuPage /></>,
+      element: <><HeaderMenu /><MenuPage /></>,
     },
     {
       path: "/tag/:tag",

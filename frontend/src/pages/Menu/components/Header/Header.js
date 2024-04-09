@@ -1,6 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import classes from "./header.module.css";
+import { useAuth } from '../../../Login/contexts/authContext';
+import { doSignOut } from '../../../Login/firebase/auth';
 
 export default function Header() {
   const user = {
@@ -11,7 +13,9 @@ export default function Header() {
     totalCount: 10,
   };
 
-  const logout = () => {};
+  // Logout implementation from header.jsx
+  const navigate = useNavigate()
+  const logout = () => { doSignOut().then(() => { navigate('/login') }) };
 
   return (
     <header className={classes.header}>

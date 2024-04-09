@@ -1,6 +1,6 @@
 export const sample_foods = [
   {
-    id: "1",
+    id: "HotCoffee",
     name: "Hot Coffee",
     price: 4.50,
     imageUrl: "hot coffee.jpg",
@@ -9,7 +9,7 @@ export const sample_foods = [
     tags: ["Drinks"],
   },
   {
-    id: "2",
+    id: "IcedCoffee",
     name: "Iced Coffee",
     price: 4.50,
     imageUrl: "icedcoffee.jpg",
@@ -18,7 +18,7 @@ export const sample_foods = [
     tags: ["Drinks"],
   },
   {
-    id: "3",
+    id: "Americano",
     name: "Americano ",
     price: 5.00,
     imageUrl: "americano.jpg",
@@ -27,7 +27,7 @@ export const sample_foods = [
     tags: ["Drinks"],
   },
   {
-    id: "4",
+    id: "Latte",
     name: "Latte",
     price: 5.50,
     imageUrl: "latte.jpg",
@@ -36,7 +36,7 @@ export const sample_foods = [
     tags: ["Drinks"],
   },
   {
-    id: "5",
+    id: "IcedLatte",
     name: "Iced Latte",
     price: 5.50,
     imageUrl: "icedlatte.jpg",
@@ -45,7 +45,7 @@ export const sample_foods = [
     tags: ["Drinks"],
   },
   {
-    id: "6",
+    id: "Macchiato",
     name: "Macchiato",
     price: 6.00,
     imageUrl: "macchiato.jpg",
@@ -54,7 +54,7 @@ export const sample_foods = [
     tags: ["Drinks"],
   },
   {
-    id: "7",
+    id: "Frappe",
     name: "Frappé",
     price: 6.00,
     imageUrl: "frappe.jpg",
@@ -63,7 +63,7 @@ export const sample_foods = [
     tags: ["Drinks"],
   },
   {
-    id: "8",
+    id: "Cappuccino",
     name: "Cappuccino",
     price: 6.25,
     imageUrl: "cappuccino.jpg",
@@ -72,7 +72,7 @@ export const sample_foods = [
     tags: ["Drinks"],
   },
   {
-    id: "9",
+    id: "Mocha",
     name: "Mocha",
     price: 6.25,
     imageUrl: "mocha.jpg",
@@ -81,7 +81,7 @@ export const sample_foods = [
     tags: ["Drinks"],
   },
   {
-    id: "10",
+    id: "FlatWhite",
     name: "Flat White",
     price: 6.00,
     imageUrl: "flat white.jpg",
@@ -90,7 +90,7 @@ export const sample_foods = [
     tags: ["Drinks"],
   },
   {
-    id: "11",
+    id: "ColdBrew",
     name: "Cold Brew",
     price: 6.50,
     imageUrl: "cold brew.jpg",
@@ -99,7 +99,7 @@ export const sample_foods = [
     tags: ["Drinks"],
   },
   {
-    id: "12",
+    id: "ChaiLatte",
     name: "Chai Latte",
     price: 5.75,
     imageUrl: "chai latte.jpg",
@@ -108,7 +108,7 @@ export const sample_foods = [
     tags: ["Drinks"],
   },
   {
-    id: "13",
+    id: "ChocolateChipCookie",
     name: "Chocolate Chip Cookie",
     price: 1.25,
     imageUrl: "chocolate chip cookie.jpg",
@@ -117,7 +117,7 @@ export const sample_foods = [
     tags: ["Bakery"],
   },
   {
-    id: "14",
+    id: "SugarCookie",
     name: "Sugar Cookie",
     price: 1.25,
     imageUrl: "sugar cookie.jpg",
@@ -126,7 +126,7 @@ export const sample_foods = [
     tags: ["Bakery"],
   },
   {
-    id: "15",
+    id: "CheeseDanish",
     name: "Cheese Danish",
     price: 3.25,
     imageUrl: "cheese danish.jpg",
@@ -135,7 +135,7 @@ export const sample_foods = [
     tags: ["Bakery"],
   },
   {
-    id: "16",
+    id: "BlueberryMuffin",
     name: "Blueberry Muffin",
     price: 3.25,
     imageUrl: "blueberry muffin.jpg",
@@ -144,7 +144,7 @@ export const sample_foods = [
     tags: ["Bakery"],
   },
   {
-    id: "17",
+    id: "ChocolateMuffin",
     name: "Chocolate Muffin",
     price: 3.25,
     imageUrl: "chocolate muffin.jpg",
@@ -153,7 +153,7 @@ export const sample_foods = [
     tags: ["Bakery"],
   },
   {
-    id: "18",
+    id: "BananaBread",
     name: "Banana Bread",
     price: 2.50,
     imageUrl: "banana bread.jpg",
@@ -162,7 +162,7 @@ export const sample_foods = [
     tags: ["Bakery"],
   },
   {
-    id: "19",
+    id: "HamCheeseWrap",
     name: "Ham & Cheese Wrap",
     price: 7.00,
     imageUrl: "ham and cheese wrap.jpg",
@@ -171,7 +171,7 @@ export const sample_foods = [
     tags: ["Wraps"],
   },
   {
-    id: "20",
+    id: "BreakfastWrap",
     name: "Breakfast Wrap",
     price: 8.00,
     imageUrl: "breakfast wrap.jpg",
@@ -180,7 +180,7 @@ export const sample_foods = [
     tags: ["Wraps"],
   },
   {
-    id: "21",
+    id: "BLTWrap",
     name: "BLT Wrap",
     price: 8.75,
     imageUrl: "blt wrap.jpeg",

@@ -10,6 +10,7 @@ import HeaderMenu from "./pages/Menu/components/Header/Header";
 
 import { AuthProvider } from "./pages/Login/contexts/authContext/";
 import { useRoutes } from "react-router-dom";
+import FoodPage from "./pages/Food/FoodPage";
 
 function App() {
   var currentUser = Login.userLoggedIn;
@@ -37,6 +38,10 @@ function App() {
     {
       path: "/tag/:tag",
       element: <><HeaderMenu /><MenuPage /></>,
+    },
+    {
+      path: "/food/:id",
+      element: <><HeaderMenu /><FoodPage /></>,
     },
   ];
   let routesElement = useRoutes(routesArray);

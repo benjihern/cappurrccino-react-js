@@ -11,3 +11,8 @@
   font-weight: 600;
   color: #9B1D21;
 }
+
+.container a:hover {
+  background-color: #A53E42;
+  color: #f0f0f0;
+}

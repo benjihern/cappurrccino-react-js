@@ -17,7 +17,7 @@ export default function Thumbnails({ foods }) {
             <div className={classes.content}>
               <div className={classes.name}>{food.name}</div>
               <div className={classes.product_item_footer}>
-                Description of food
+                {food.shortdesc}
               </div>
               <div className={classes.price}>
                 <Price price={food.price} />

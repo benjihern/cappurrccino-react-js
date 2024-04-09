@@ -25,6 +25,8 @@
 }
 
 .content {
+  color: black;
+  font-weight: bold;
   margin-top: 0.3rem;
   padding: 0.5rem 1rem;
   position: relative;
@@ -32,12 +34,15 @@
 }
 
 .product_item_footer {
+  font-weight: normal;
+  color: #6F4533;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
 .price {
+  font-weight: normal;
   position: absolute;
   bottom: 0;
   left: 0.9rem;

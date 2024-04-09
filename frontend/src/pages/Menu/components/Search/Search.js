@@ -21,5 +21,5 @@ export default function Search() {
       />
       <button onClick={search}>Search</button>
     </div>
-  )
+  );
 }

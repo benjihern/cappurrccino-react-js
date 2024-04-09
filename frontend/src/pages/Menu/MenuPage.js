@@ -27,9 +27,11 @@ export default function HomePage() {
   useEffect(() => {
     getAllTags().then(tags => dispatch({ type: 'TAGS_LOADED', payload: tags }));
 
-
-    const loadFoods = tag? getAll(tag) : searchTerm
-      ? search(searchTerm) : getAll();
+    const loadFoods = tag
+      ? getAllByTag(tag)
+      : searchTerm
+      ? search(searchTerm) 
+      : getAll();
 
       loadFoods.then(foods => dispatch({ type: "FOODS_LOADED", payload: foods }));
   }, [searchTerm, tag]);
@@ -37,7 +39,7 @@ export default function HomePage() {
   return (
     <>
       <Search />
-      <Tags tags={tags}/>
+      <Tags tags={tags} />
       <Thumbnails foods={foods} />
     </>
   );

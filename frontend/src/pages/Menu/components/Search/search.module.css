@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
+
 .container {
   display: flex;
   justify-content: center;
@@ -6,6 +9,7 @@
 }
 
 .container input {
+  font-family: Laila;
   border-radius: 10rem 0 0 10rem;
   border: none;
   height: 3rem;
@@ -18,6 +22,7 @@
 }
 
 .container button {
+  font-family: Laila;
   color: gray;
   height: 3rem;
   width: 5rem;

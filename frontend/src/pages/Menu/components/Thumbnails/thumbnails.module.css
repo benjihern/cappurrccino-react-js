@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
+
 .list {
   display: flex;
   justify-content: center;
@@ -25,6 +27,7 @@
 }
 
 .content {
+  font-family: Laila;
   color: black;
   font-weight: bold;
   margin-top: 0.3rem;
@@ -34,6 +37,7 @@
 }
 
 .product_item_footer {
+  font-family: Laila;
   font-weight: normal;
   color: #6F4533;
   display: flex;
@@ -42,6 +46,7 @@
 }
 
 .price {
+  font-family: Calistoga;
   font-weight: normal;
   position: absolute;
   bottom: 0;

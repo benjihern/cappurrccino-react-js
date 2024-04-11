@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import classes from "./header.module.css";
 import { useAuth } from '../../../Login/contexts/authContext';
 import { doSignOut } from '../../../Login/firebase/auth';
-import { useCart } from '../../Hooks/useCart';
+import { useCart } from '../../../../Hooks/useCart';
 
 export default function Header() {
   const user = {

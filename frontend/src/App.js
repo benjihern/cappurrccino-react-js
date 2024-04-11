@@ -11,6 +11,7 @@ import HeaderMenu from "./pages/Menu/components/Header/Header";
 import { AuthProvider } from "./pages/Login/contexts/authContext/";
 import { useRoutes } from "react-router-dom";
 import FoodPage from "./pages/Food/FoodPage";
+import CartPage from "./pages/Cart/CartPage";
 
 function App() {
   var currentUser = Login.userLoggedIn;
@@ -42,6 +43,10 @@ function App() {
     {
       path: "/food/:id",
       element: <><HeaderMenu /><FoodPage /></>,
+    },
+    {
+      path: "/cart",
+      element: <><HeaderMenu /><CartPage /></>,
     },
   ];
   let routesElement = useRoutes(routesArray);

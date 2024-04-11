@@ -1,10 +1,10 @@
 import React from 'react'
 import classes from './cartPage.module.css';
-import Title from '../../components/Title/Title';
+import Title from '../Menu/components/Title/Title';
 import { useCart } from '../../Hooks/useCart';
 import { Link } from 'react-router-dom';
-import Price from '../../components/Price/Price';
-import NotFound from '../../components/NotFound/NotFound';
+import Price from '../Menu/components/Price/Price';
+import NotFound from '../Menu/components/NotFound/NotFound';
 
 export default function CartPage() {
 

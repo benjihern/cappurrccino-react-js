@@ -3,15 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import classes from "./header.module.css";
 import { useAuth } from '../../../Login/contexts/authContext';
 import { doSignOut } from '../../../Login/firebase/auth';
+import { useCart } from '../../Hooks/useCart';
 
 export default function Header() {
   const user = {
     name: "CatGuy123",
   };
 
-  const cart = {
-    totalCount: 10,
-  };
+  const { cart } = useCart();
 
   // Logout implementation from header.jsx
   const navigate = useNavigate()

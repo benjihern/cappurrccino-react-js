@@ -16,7 +16,7 @@ export default function CartProvider({ children }) {
 
   useEffect(() => {
     const taxRate = 0.06; 
-    const totalPriceWithoutTax = sum(cartItems.map(item => item.price * item.quantity));
+    const totalPriceWithoutTax = sum(cartItems.map(item => item.price));
     const totalTax = totalPriceWithoutTax * taxRate;
     const totalPriceWithTax = totalPriceWithoutTax + totalTax;
     const totalCount = sum(cartItems.map(item => item.quantity));

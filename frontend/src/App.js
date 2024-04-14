@@ -8,45 +8,56 @@ import Register from "./pages/Login/components/auth/register/register";
 import HeaderLogin from "./pages/Login/components/header/header";
 import HeaderMenu from "./pages/Menu/components/Header/Header";
 
+import Loading from "./components/Loading/Loading";
+import {useLoading} from './Hooks/useLoading';
+import {setLoadingInterceptor} from './interceptors/loadingInterceptor';
+import {useEffect} from 'react';
+
 import { AuthProvider } from "./pages/Login/contexts/authContext/";
 import { useRoutes } from "react-router-dom";
 import FoodPage from "./pages/Food/FoodPage";
 import CartPage from "./pages/Cart/CartPage";
 
 function App() {
+  const {showLoading, hideLoading} = useLoading();
+
+  useEffect(() => {
+    setLoadingInterceptor({showLoading, hideLoading});
+  });
+
   var currentUser = Login.userLoggedIn;
   const routesArray = [
     {
       path: "*",
-      element: currentUser ? <><HeaderLogin /><Login /></> : <><HeaderMenu /><MenuPage /></>,
+      element: currentUser ? <><Loading /><HeaderLogin /><Login /></> : <><Loading /><HeaderMenu /><MenuPage /></>,
     },
     {
       path: "/login",
-      element: <><HeaderLogin /><Login /></>,
+      element: <><Loading /><HeaderLogin /><Login /></>,
     },
     {
       path: "/register",
-      element: <><HeaderLogin /><Register /></>,
+      element: <><Loading /><HeaderLogin /><Register /></>,
     },
     {
       path: "/menu",
-      element: <><HeaderMenu /><MenuPage /></>,
+      element: <><Loading /><HeaderMenu /><MenuPage /></>,
     },
     {
       path: "/search/:searchTerm",
-      element: <><HeaderMenu /><MenuPage /></>,
+      element: <><Loading /><HeaderMenu /><MenuPage /></>,
     },
     {
       path: "/tag/:tag",
-      element: <><HeaderMenu /><MenuPage /></>,
+      element: <><Loading /><HeaderMenu /><MenuPage /></>,
     },
     {
       path: "/food/:id",
-      element: <><HeaderMenu /><FoodPage /></>,
+      element: <><Loading /><HeaderMenu /><FoodPage /></>,
     },
     {
       path: "/cart",
-      element: <><HeaderMenu /><CartPage /></>,
+      element: <><Loading /><HeaderMenu /><CartPage /></>,
     },
   ];
   let routesElement = useRoutes(routesArray);

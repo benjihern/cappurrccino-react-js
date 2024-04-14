@@ -19,7 +19,33 @@ const Register = () => {
         e.preventDefault()
         if(!isRegistering) {
             setIsRegistering(true)
-            await doCreateUserWithEmailAndPassword(email, password)
+            try {
+                if(password !== confirmPassword) {
+                    setIsRegistering(false);
+                    alert('The passwords do not match. Please try again.');
+                    return;
+                }
+                await doCreateUserWithEmailAndPassword(email, password).catch(err => {
+                    setIsRegistering(false);
+                    switch(err.code) {
+                        case 'auth/email-already-in-use':
+                            alert('The email address is already in use by another account. Please try again.');
+                            console.log(err.code);
+                            break;
+                        case 'auth/weak-password':
+                            alert('The password does not meet the minimum requirements. Please try again.');
+                            console.log(err.code);
+                            break;
+                        default:
+                            alert('An error occurred with creating an account. Please try again.');
+                            console.log(err.code);
+                            break;
+                    }
+                })  
+            }catch(err){
+                console.log(err.code);
+            }
+            
         }
     }
 
@@ -54,7 +80,7 @@ const Register = () => {
 
                         <div>
                             <label className="text-sm text-gray-600 font-bold">
-                                Password
+                                Password (must be at least 6 characters)
                             </label>
                             <input
                                 disabled={isRegistering}

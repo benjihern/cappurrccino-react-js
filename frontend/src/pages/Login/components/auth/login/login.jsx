@@ -15,7 +15,27 @@ const Login = () => {
         e.preventDefault()
         if(!isSigningIn) {
             setIsSigningIn(true)
-            await doSignInWithEmailAndPassword(email, password)
+            try {
+                await doSignInWithEmailAndPassword(email, password).catch(err => {
+                    setIsSigningIn(false);
+                    switch(err.code) {
+                        case 'auth/invalid-credential':
+                            alert('The email address or password is incorrect. Please try again.');
+                            console.log(err.code);
+                            break;
+                        case 'auth/too-many-requests':
+                            alert('Too many requests have been sent to the server. Please try again later.');
+                            console.log(err.code);
+                            break;
+                        default:
+                            alert('An error occurred with signing in. Please try again.');
+                            console.log(err.code);
+                            break;
+                    }
+                })
+            }catch(err){
+                console.log(err.code);
+            }
             // doSendEmailVerification()
         }
     }
@@ -24,9 +44,21 @@ const Login = () => {
         e.preventDefault()
         if (!isSigningIn) {
             setIsSigningIn(true)
-            doSignInWithGoogle().catch(err => {
-                setIsSigningIn(false)
-            })
+            try {
+                doSignInWithGoogle().catch(err => {
+                    setIsSigningIn(false)
+                    switch(err.code) {
+                        case 'auth/popup-closed-by-user':
+                            alert('The Google sign in popup was closed. Please try again.');
+                            break;
+                        default:
+                            alert('An error occurred with signing in. Please try again.');
+                            break;
+                    }
+                })
+            }catch(err){
+               console.log(err.code);
+            }
         }
     }
 

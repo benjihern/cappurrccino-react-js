@@ -29,40 +29,42 @@ function App() {
   const routesArray = [
     {
       path: "*",
-      element: currentUser ? <><Loading /><HeaderLogin /><Login /></> : <><Loading /><HeaderMenu /><MenuPage /></>,
+      element: currentUser ? <><HeaderLogin /><Login /></> : <><Loading /><HeaderMenu /><MenuPage /></>,
     },
     {
       path: "/login",
-      element: <><Loading /><HeaderLogin /><Login /></>,
+      element: <><HeaderLogin /><Login /></>,
     },
     {
       path: "/register",
-      element: <><Loading /><HeaderLogin /><Register /></>,
+      element: <><HeaderLogin /><Register /></>,
     },
     {
       path: "/menu",
-      element: <><Loading /><HeaderMenu /><MenuPage /></>,
+      element: <><HeaderMenu /><MenuPage /></>,
     },
     {
       path: "/search/:searchTerm",
-      element: <><Loading /><HeaderMenu /><MenuPage /></>,
+      element: <><HeaderMenu /><MenuPage /></>,
     },
     {
       path: "/tag/:tag",
-      element: <><Loading /><HeaderMenu /><MenuPage /></>,
+      element: <><HeaderMenu /><MenuPage /></>,
     },
     {
       path: "/food/:id",
-      element: <><Loading /><HeaderMenu /><FoodPage /></>,
+      element: <><HeaderMenu /><FoodPage /></>,
     },
     {
       path: "/cart",
-      element: <><Loading /><HeaderMenu /><CartPage /></>,
+      element: <><HeaderMenu /><CartPage /></>,
     },
   ];
   let routesElement = useRoutes(routesArray);
   return (
     <AuthProvider>
+     {/*The loading screen is kinda trippy because the page loads quickly, it can be added/removed through this line */}
+      <Loading />
       <div className="w-full h-screen flex flex-col">{routesElement}</div>
     </AuthProvider>
   );

@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import CartProvider from "./Hooks/useCart";
 import {LoadingProvider} from "./Hooks/useLoading.js";
 import './axiosConfig';
+import './interceptors/authinterceptor';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

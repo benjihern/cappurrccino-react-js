@@ -17,6 +17,8 @@ import { AuthProvider } from "./pages/Login/contexts/authContext/";
 import { useRoutes } from "react-router-dom";
 import FoodPage from "./pages/Food/FoodPage";
 import CartPage from "./pages/Cart/CartPage";
+import CheckoutPage from "./pages/Checkout/CheckoutPage";
+import AuthRoute from "./components/Loading/AuthRoute.js/AuthRoute";
 
 function App() {
   const {showLoading, hideLoading} = useLoading();
@@ -58,6 +60,10 @@ function App() {
     {
       path: "/cart",
       element: <><HeaderMenu /><CartPage /></>,
+    },
+    {
+      path: "/checkout",
+      element: <AuthRoute><HeaderMenu /><CheckoutPage/></AuthRoute>,
     },
   ];
   let routesElement = useRoutes(routesArray);

@@ -5,19 +5,36 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import CartProvider from "./Hooks/useCart";
-import {LoadingProvider} from "./Hooks/useLoading.js";
+import { LoadingProvider } from "./Hooks/useLoading.js";
 import './axiosConfig';
+import { AuthProvider } from "./Hooks/useAuth.js";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import './interceptors/authinterceptor';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <LoadingProvider>
-      <CartProvider>
-        <App />
-      </CartProvider>
-      </LoadingProvider>
+      <AuthProvider>
+        <LoadingProvider>
+        <CartProvider>
+          <App />
+          <ToastContainer
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={true}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
+        </CartProvider>
+        </LoadingProvider>
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -1,20 +1,17 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import classes from "./header.module.css";
-import { useAuth } from '../../../Login/contexts/authContext';
-import { doSignOut } from '../../../Login/firebase/auth';
 import { useCart } from '../../../../Hooks/useCart';
+import { useAuth } from "../../../../Hooks/useAuth";
 
 export default function Header() {
-  const user = {
-    name: "CatGuy123",
-  };
+  const { user, logout } = useAuth();
 
   const { cart } = useCart();
 
   // Logout implementation from header.jsx
   const navigate = useNavigate()
-  const logout = () => { doSignOut().then(() => { navigate('/login') }) };
+  // const logout = () => { doSignOut().then(() => { navigate('/login') }) };
 
   return (
     <header className={classes.header}>

@@ -1,25 +1,26 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import Login from "./pages/Login/components/auth/login/login";
-import Register from "./pages/Login/components/auth/register/register";
 import MenuPage from "./pages/Menu/MenuPage";
-
-import HeaderLogin from "./pages/Login/components/header/header";
-import HeaderMenu from "./pages/Menu/components/Header/Header";
 import CartPage from "./pages/Cart/CartPage";
-//import Register from "./pages/Login/components/auth/register";
+import LoginPage from "./pages/Login/LoginPage";
+import FoodPage from "./pages/Food/FoodPage";
+import CheckoutPage from "./pages/Checkout/CheckoutPage";
+import AuthRoute from "./components/Loading/AuthRoute.js/AuthRoute";
+import PaymentPage from "./pages/Payment/PaymentPage";
 
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="/*" element={<><HeaderMenu /><MenuPage /></>} />
-      {/* <Route path="/login" element={<><HeaderLogin /><Login /></>} />
-      <Route path="/register" element={<><HeaderLogin /><Register /></>} /> */}
-      <Route path="/menu" element={<><HeaderMenu /><MenuPage /></>} />
-      <Route path="/search/:searchTerm" element={<><HeaderMenu /><MenuPage /></>} />
-      <Route path="/tag/:tag" element={<><HeaderMenu /><MenuPage /></>} />
+      <Route path="/*" element={<><MenuPage /></>} />
+      <Route path="/login" element={<><LoginPage /></>} />
+      <Route path="/menu" element={<><MenuPage /></>} />
+      <Route path="/search/:searchTerm" element={<><MenuPage /></>} />
+      <Route path="/tag/:tag" element={<><MenuPage /></>} />
+      <Route path="/food/:id" element={<><FoodPage /></>} />
       <Route path="/cart" element={<CartPage/>} />
+      <Route path="/checkout" element={<CheckoutPage/>} />
+      <Route path="/payment" element={<PaymentPage/>} />
     </Routes>
   );
 }

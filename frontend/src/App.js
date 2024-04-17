@@ -19,6 +19,7 @@ import FoodPage from "./pages/Food/FoodPage";
 import CartPage from "./pages/Cart/CartPage";
 import CheckoutPage from "./pages/Checkout/CheckoutPage";
 import AuthRoute from "./components/Loading/AuthRoute.js/AuthRoute";
+import PaymentPage from "./pages/Payment/PaymentPage";
 
 function App() {
   const {showLoading, hideLoading} = useLoading();
@@ -64,6 +65,10 @@ function App() {
     {
       path: "/checkout",
       element: <AuthRoute><HeaderMenu /><CheckoutPage/></AuthRoute>,
+    },
+    {
+      path: "/payment",
+      element: <AuthRoute><HeaderMenu /><PaymentPage/></AuthRoute>,
     },
   ];
   let routesElement = useRoutes(routesArray);

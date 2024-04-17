@@ -15,25 +15,20 @@ export default function CartProvider({ children }) {
   const [totalCount, setTotalCount] = useState(initCart.totalCount);
 
   useEffect(() => {
-    const taxRate = 0.06; 
-    const totalPriceWithoutTax = sum(cartItems.map(item => item.price));
-    const totalTax = totalPriceWithoutTax * taxRate;
-    const totalPriceWithTax = totalPriceWithoutTax + totalTax;
+    const totalPrice = sum(cartItems.map(item => item.price));
     const totalCount = sum(cartItems.map(item => item.quantity));
-
-    setTotalPrice(totalPriceWithTax);
+    setTotalPrice(totalPrice);
     setTotalCount(totalCount);
 
     localStorage.setItem(
       CART_KEY,
       JSON.stringify({
         items: cartItems,
-        totalPrice: totalPriceWithTax,
+        totalPrice,
         totalCount,
       })
     );
   }, [cartItems]);
-
 
   function getCartFromLocalStorage() {
     const storedCart = localStorage.getItem(CART_KEY);
@@ -49,13 +44,13 @@ export default function CartProvider({ children }) {
     setCartItems(filteredCartItems);
   };
 
-  const changeQuantity = (cartItem, newQuantity) => {
+  const changeQuantity = (cartItem, newQauntity) => {
     const { food } = cartItem;
 
     const changedCartItem = {
       ...cartItem,
-      quantity: newQuantity,
-      price: food.price * newQuantity,
+      quantity: newQauntity,
+      price: food.price * newQauntity,
     };
 
     setCartItems(

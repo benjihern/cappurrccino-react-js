@@ -69,7 +69,7 @@ export default function RegisterPage() {
                     {
                         ...register('password', {
                             required: true,
-                            minLength: 6,
+                            minLength: 5,
                         })
                     }
                     error = {errors.password}
@@ -96,7 +96,7 @@ export default function RegisterPage() {
                     {
                         ...register('address', {
                             required: true,
-                            minLength: 10,
+                            minLength: 5,
                         })
                     }
                     error = {errors.address}

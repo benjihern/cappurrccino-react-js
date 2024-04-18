@@ -31,7 +31,7 @@ OrderItemSchema.pre('validate', function (next) {
 const orderSchema = new Schema(
   {
     name: { type: String, required: true },
-    address: { type: String, required: true },
+    address: { type: String, required: false },
     addressLatLng: { type: LatLngSchema, required: true },
     paymentId: { type: String },
     totalPrice: { type: Number, required: true },

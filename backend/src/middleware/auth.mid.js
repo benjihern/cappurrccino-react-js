@@ -1,4 +1,4 @@
-import { verify } from 'jsonwebtoken';
+import verify from 'jsonwebtoken';
 import { UNAUTHORIZED } from '../constants/httpStatus.js';
 
 export default (req, res, next) => {

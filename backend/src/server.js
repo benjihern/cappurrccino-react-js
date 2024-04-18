@@ -21,11 +21,10 @@ app.use(
 );
 
 app.use('/api/foods', foodRouter);
+app.use('/api/users', userRouter);
 app.use('/api/orders', orderRouter);
 
 const PORT = 5000;
 app.listen(PORT, () => {
     console.log('The server is running on port ' + PORT);
 });
-
-app.use('/api/users', userRouter);

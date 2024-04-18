@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Price from '../Price/Price';
+import Price from '../../pages/Menu/components/Price/Price';
 import classes from './orderItemsList.module.css';
 
 export default function OrderItemsList({ order }) {

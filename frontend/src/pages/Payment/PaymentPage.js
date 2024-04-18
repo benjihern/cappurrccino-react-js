@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import classes from './paymentPage.module.css';
 import { getNewOrderForCurrentUser } from '../../services/orderService';
-import Title from '../../components/Title/Title';
+import Title from '../Menu/components/Title/Title';
 import OrderItemsList from '../../components/orderItemsList/orderItemsList';
 import Map from '../../components/Map/Map';
 import PaypalButtons from '../../components/PaypalButtons/PaypalButtons';

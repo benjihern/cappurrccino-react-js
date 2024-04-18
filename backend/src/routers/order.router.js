@@ -17,6 +17,9 @@ router.post(
 
     if (order.items.length <= 0) res.status(BAD_REQUEST).send('Cart Is Empty!');
 
+    console.log(req.body);
+    // console.log(req.user);
+
     await OrderModel.deleteOne({
       user: req.user.id,
       status: OrderStatus.NEW,
@@ -104,4 +107,5 @@ const getNewOrderForCurrentUser = async req =>
     user: req.user.id,
     status: OrderStatus.NEW,
   }).populate('user');
+
 export default router;

@@ -6,8 +6,11 @@ export default (req, res, next) => {
   if (!token) return res.status(UNAUTHORIZED).send();
 
   try {
-    const decoded = verify(token, process.env.JWT_SECRET);
+    console.log("This is the token: " + token);
+    const decoded = verify(token, 'SomeRandomText');
+    console.log("This is the decoded: " + decoded);
     req.user = decoded;
+    console.log("This is the req.user:" + req.user);
   } catch (error) {
     res.status(UNAUTHORIZED).send();
   }

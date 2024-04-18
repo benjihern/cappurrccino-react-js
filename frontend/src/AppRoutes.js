@@ -21,8 +21,8 @@ export default function AppRoutes() {
       <Route path="/tag/:tag" element={<><MenuPage /></>} />
       <Route path="/food/:id" element={<><FoodPage /></>} />
       <Route path="/cart" element={<CartPage/>} />
-      <Route path="/checkout" element={<CheckoutPage/>} />
-      <Route path="/payment" element={<PaymentPage/>} />
+      <Route path="/checkout" element={<AuthRoute><CheckoutPage/></AuthRoute>} />
+      <Route path="/payment" element={<AuthRoute><PaymentPage/></AuthRoute>} />
     </Routes>
   );
 }

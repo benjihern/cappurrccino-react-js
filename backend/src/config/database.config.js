@@ -7,7 +7,7 @@ import bcrypt from 'bcryptjs';
 
 const PASSWORD_HASH_SALT_ROUNDS = 10;
 
-set('strictQuery', true);
+set('strictQuery', false);
 
 export const dbconnect = async () => {
     try {

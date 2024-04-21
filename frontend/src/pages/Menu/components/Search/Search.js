@@ -5,9 +5,10 @@ import { useNavigate, useParams } from 'react-router-dom';
 Search.defaultProps = {
   searchRoute: '/search/',
   defaultRoute: '/',
+  placeholder: "Search our menu!",
 };
 
-export default function Search({ searchRoute, defaultRoute, margin }) {
+export default function Search({ searchRoute, defaultRoute, margin, placeholder }) {
   const [term, setTerm] = useState('');
   const navigate = useNavigate();
   const { searchTerm } = useParams();
@@ -19,7 +20,7 @@ export default function Search({ searchRoute, defaultRoute, margin }) {
   return (
     <div className={classes.container} style={{margin}}>
       <input type="text"
-        placeholder="Search our menu!"
+        placeholder={placeholder}
         onChange={e => setTerm(e.target.value)}
         onKeyUp={ e => e.key === "Enter" && search()}
         defaultValue={searchTerm}

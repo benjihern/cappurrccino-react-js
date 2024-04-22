@@ -13,6 +13,52 @@ router.get(
     })
 );
 
+router.post(
+    '/',
+    admin,
+    handler(async (req, res) => {
+        const { name, description, price, tags, imageUrl} = 
+            req.body;
+
+    const food = new FoodModel({
+        name,
+        description,
+        price,
+        tags: tags.split ? tags.split(',') : tags,
+        imageUrl,
+    });
+
+    await food.save();
+
+    res.send(food);
+    })
+);
+
+
+
+router.put(
+    '/',
+    admin,
+    handler(async (req, res) => {
+        const {id, name, description, price, tags, imageUrl} = 
+            req.body;
+
+        await FoodModel.updateOne(
+            {_id: id},
+            {
+                name,
+                description,
+                price,
+                tags: tags.split ? tags.split(',') : tags,
+                imageUrl,
+            }
+        );
+
+        res.send();
+    })
+);
+
+
 router.delete(
     '/:foodId', 
     admin, 

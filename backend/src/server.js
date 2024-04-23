@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-import { fileURLtoPath } from 'url';
+import { fileURLToPath } from 'url';
 import express from 'express';
 import cors from 'cors';
 import foodRouter from './routers/food.router.js'
@@ -10,10 +10,10 @@ import orderRouter from './routers/order.router.js'
 import uploadRouter from './routers/upload.router.js';
 
 import {dbconnect} from './config/database.config.js';
-import { dirname } from 'path';
+import path, { dirname } from 'path';
 dbconnect();
 
-const __filename = fileURLtoPath(import.meta.url);
+const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();

@@ -18,7 +18,7 @@ function App() {
 
   return (
     <>
-      {/* <Loading /> */}
+      <Loading />
       <HeaderMenu />
       <AppRoutes />
     </>

@@ -28,7 +28,7 @@ router.post('/login', handler(async (req, res) => {
 router.post(
     '/register',
     handler(async (req, res) => {
-        const { name, email, password, address } = req.body;
+        const { name, email, password } = req.body;
         
         const user = await UserModel.findOne({ email });
 
@@ -46,7 +46,6 @@ router.post(
             name,
             email: email.toLowerCase(),
             password: hashedPassword,
-            address,
         };
 
         const result = await UserModel.create(newUser);
@@ -55,10 +54,10 @@ router.post(
 );
 
 router.put('/updateProfile', auth, handler(async (req, res) => {
-    const { name, address } = req.body;
+    const { name } = req.body;
     const user = await UserModel.findByIdAndUpdate(
         req.user.id,
-        { name, address },
+        { name },
         { new: true },
     );
 
@@ -135,11 +134,10 @@ router.get('/getById/:userId', admin, handler(async (req, res) => {
 
 router.put('/update/', admin, handler(async (req, res) => {
 
-    const { id, name, email, address, isAdmin } = req.body;
+    const { id, name, email, isAdmin } = req.body;
     await UserModel.findByIdAndUpdate(id, { 
         name,
         email,
-        address,
         isAdmin,
     });
     res.send();

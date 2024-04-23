@@ -48,11 +48,6 @@ export default function UserEditPage() {
                         error={errors.email}
                     />
                     <Input 
-                        label="Address"
-                        {...register('address', { required: true, minLength: 5 })}
-                        error={errors.address}
-                    />
-                    <Input 
                         label="Is Admin"
                         type="checkbox"
                         {...register('isAdmin')}

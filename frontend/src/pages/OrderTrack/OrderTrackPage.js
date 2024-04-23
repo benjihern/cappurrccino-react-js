@@ -6,7 +6,6 @@ import classes from './orderTrackPage.module.css';
 import DateTime from '../../components/DateTime/DateTime';
 import OrderItemsList from '../../components/orderItemsList/orderItemsList';
 import Title from '../Menu/components/Title/Title';
-import Map from '../../components/Map/Map';
 
 export default function OrderTrackPage() {
     const { orderId } = useParams();
@@ -36,10 +35,6 @@ export default function OrderTrackPage() {
                     {order.name}
                 </div>
                 <div>
-                    <strong>Address</strong>
-                    {order.address}
-                </div>
-                <div>
                     <strong>Status</strong>
                     {order.status}
                 </div>
@@ -53,12 +48,6 @@ export default function OrderTrackPage() {
 
             <OrderItemsList order={order} />
         </div>
-
-        <div>
-            <Title title="Your Location" fontSize="1.6rem" />
-            <Map location={order.addressLatLng} readonly={true} />
-        </div>
-
         {
             order.status === 'NEW' && <div className={classes.payment}>
                 <Link to="/payment">Go To Payment</Link>

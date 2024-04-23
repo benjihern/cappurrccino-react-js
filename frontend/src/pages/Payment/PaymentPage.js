@@ -3,7 +3,6 @@ import classes from './paymentPage.module.css';
 import { getNewOrderForCurrentUser } from '../../services/orderService';
 import Title from '../Menu/components/Title/Title';
 import OrderItemsList from '../../components/orderItemsList/orderItemsList';
-import Map from '../../components/Map/Map';
 import PaypalButtons from '../../components/PaypalButtons/PaypalButtons';
 
 export default function PaymentPage() {
@@ -28,19 +27,9 @@ export default function PaymentPage() {
               <h3>Name:</h3>
               <span>{order.name}</span>
             </div>
-            <div>
-              <h3>Address:</h3>
-              <span>{order.address}</span>
-            </div>
           </div>
           <OrderItemsList order={order} />
         </div>
-
-        <div className={classes.map}>
-          <Title title="Your Location" fontSize="1.6rem" />
-          <Map readonly={true} location={order.addressLatLng} />
-        </div>
-
         <div className={classes.buttons_container}>
           <div className={classes.buttons}>
             <PaypalButtons order={order} />

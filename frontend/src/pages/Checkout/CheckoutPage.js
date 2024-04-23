@@ -11,7 +11,6 @@ import Title from '../Menu/components/Title/Title';
 import Input from '../Login/components/Input/input';
 import Button from '../Login/components/Button/Button';
 import OrderItemsList from '../../components/orderItemsList/orderItemsList';
-import Map from '../../components/Map/Map';
 export default function CheckoutPage() {
   const { cart } = useCart();
   const { user } = useAuth();
@@ -25,12 +24,7 @@ export default function CheckoutPage() {
   } = useForm();
 
   const submit = async data => {
-    if (!order.addressLatLng) {
-      toast.warning('Please select your location on the map');
-      return;
-    }
-
-    await createOrder({ ...order, name: data.name, address: data.address });
+    await createOrder({ ...order, name: data.name });
     navigate('/payment');
   };
 
@@ -38,7 +32,7 @@ export default function CheckoutPage() {
     <>
       <form onSubmit={handleSubmit(submit)} className={classes.container}>
         <div className={classes.content}>
-          <Title title="Order Form" fontSize="1.6rem" />
+          <Title title="Checkout" fontSize="1.6rem" />
           <div className={classes.inputs}>
             <Input
               defaultValue={user.name}
@@ -46,26 +40,9 @@ export default function CheckoutPage() {
               {...register('name')}
               error={errors.name}
             />
-            <Input
-              defaultValue={user.address}
-              label="Address"
-              {...register('address')}
-              error={errors.address}
-            />
           </div>
           <OrderItemsList order={order} />
         </div>
-        <div>
-          <Title title="Choose Your Location" fontSize="1.6rem" />
-          <Map
-            location={order.addressLatLng}
-            onChange={latlng => {
-              console.log(latlng);
-              setOrder({ ...order, addressLatLng: latlng });
-            }}
-          />
-        </div>
-
         <div className={classes.buttons_container}>
           <div className={classes.buttons}>
             <Button

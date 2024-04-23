@@ -88,18 +88,6 @@ export default function RegisterPage() {
                     error = {errors.confirmPassword}
                 />
 
-                <Input
-                    type = "text"
-                    label = "Address"
-                    {
-                        ...register('address', {
-                            required: true,
-                            minLength: 5,
-                        })
-                    }
-                    error = {errors.address}
-                />
-
                 <Button type="submit" text="Register" />
 
                 <div className={classes.login}>

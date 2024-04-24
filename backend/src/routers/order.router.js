@@ -19,7 +19,7 @@ router.post(
 
     await OrderModel.deleteOne({
       user: req.user.id,
-      status: OrderStatus.NEW,
+      status: OrderStatus.IN_PROGRESS,
     });
 
     const newOrder = new OrderModel({ ...order, user: req.user.id });
@@ -102,6 +102,6 @@ router.get(
 const getNewOrderForCurrentUser = async req =>
   await OrderModel.findOne({
     user: req.user.id,
-    status: OrderStatus.NEW,
+    status: OrderStatus.IN_PROGRESS,
   }).populate('user');
 export default router;

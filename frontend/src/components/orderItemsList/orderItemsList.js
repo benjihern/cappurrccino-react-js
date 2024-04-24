@@ -33,7 +33,7 @@ export default function OrderItemsList({ order }) {
         <tr>
           <td colSpan="3"></td>
           <td>
-            <strong>Total :</strong>
+            <strong>Total (w/ Tax) :</strong>
           </td>
           <td>
             <Price price={order.totalPrice} />

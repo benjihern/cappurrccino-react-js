@@ -109,7 +109,7 @@
   }
   
   .checkout .total_price::before {
-    content: 'Price: ';
+    content: 'Total (w/ Tax): ';
     color: grey;
   }
   

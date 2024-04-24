@@ -2,15 +2,16 @@
     align-items: center;
     margin-top: 1rem;
     display: flex;
-    margin: 0 0 6rem 2rem;
+    /* margin: 0 10rem 6rem 2rem; */
     flex-wrap: wrap;
     justify-content: center;
+    margin-left: 25rem;
+    margin-right: 0rem;
   }
 
   
   .content {
     width: 35rem;
-    margin: 0 3rem 0 0;
   }
   
   .content,

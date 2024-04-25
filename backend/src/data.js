@@ -183,7 +183,7 @@ export const sample_foods = [
     id: "BLTWrap",
     name: "BLT Wrap",
     price: 8.75,
-    imageUrl: "blt wrap.jpeg",
+    imageUrl: "blt wrap.jpg",
     shortdesc: "",
     description: "Our classic BLT wrap, packed with turkey, crispy bacon, fresh lettuce, tomatoes, and mayonnaise.",
     tags: ["Wraps"],
